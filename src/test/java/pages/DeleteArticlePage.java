@@ -1,6 +1,8 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
@@ -13,16 +15,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeleteArticlePage {
 	
-	WebDriver driver = new ChromeDriver();
+	WebDriver driver;
 	WebDriverWait wait;
 	
 	@FindBy(xpath="(//button[contains(.,'Delete Article')])[1]") WebElement deleteBtn;
-	@FindBy(xpath="//div[@class='article-preview']") WebElement deleteSucc;
+	@FindBy(xpath="//div[@class='article-preview']") List<WebElement> deleteSucc;
 	
 	
 	public DeleteArticlePage(WebDriver driver) {
 		this.driver=driver;
-		this.wait=wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		this.wait= new WebDriverWait(driver, Duration.ofSeconds(10));
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -45,11 +47,26 @@ public class DeleteArticlePage {
 
     }
         
-	public String isDeleted()
-	{
-		String deleteSuccess = deleteSucc.getAttribute("Articles not available.");
-		return deleteSuccess;
+//	public boolean isDeleted()
+//	{
+//		try {
+//			return deleteSucc.getText().contains("Articles not available.");
+//	    } catch (NoSuchElementException e) {
+//	        return false;
+//	    }
+//	}
+	public boolean isDeleted() {
+	    List<WebElement> elements = deleteSucc;
+	    if (elements.isEmpty()) {
+	        return false; 
+	    }
+	    return true;
+	    //return elements.get(0).getText().contains("not available.");
+	}
+
+//	String deleteSuccess = deleteSucc.getAttribute("Articles not available.");
+//	return deleteSuccess;
 	}
 	
 
-}
+

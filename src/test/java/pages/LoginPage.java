@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 public class LoginPage {
 	
-	@FindBy (xpath="//a[contains(.,'Login')]") WebElement loginH;
+	@FindBy(xpath="//a[contains(.,'Login')]") WebElement loginH;
 	@FindBy(xpath="//input[@name='email']") WebElement email;
 	@FindBy(xpath="//input[@name='password']") WebElement pwd;
 	@FindBy(xpath="//button[@class='btn btn-lg btn-primary pull-xs-right']") WebElement loginBtn;

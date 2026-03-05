@@ -69,11 +69,16 @@ public class ArticlePage {
 		
 	}
 		public boolean verifyHeader() {
-		
-		if(headerVer.isDisplayed()) {return true;
-	}
-		else {return false;
-		}
+			try {
+		        return headerVer.isDisplayed();
+		    } catch (org.openqa.selenium.NoSuchElementException e) {
+		        return false;
+		    }
+//		if(headerVer.isDisplayed()) {return true;
+//	}
+//		else {
+//			return false;
+//		}
 		}
 	
 	public boolean checkErr() 

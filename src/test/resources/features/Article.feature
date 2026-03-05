@@ -1,4 +1,4 @@
-Feature: Article CRUD 
+Feature: Article CRUD
 
 #Login Process
 Scenario: User Login
@@ -14,20 +14,22 @@ Then Article must be Created
 
 Examples:
 | title | desc | body | tag |
-| TestRP17 | Selenium1 | Java with Selenium | RP |
+| TestRP21 | Selenium1 | Java with Selenium | RP |
+| TestRP18 | Selenium1 | Java with Selenium | RP |
+| TestRP22 | Selenium1 | Java with Selenium | RP |
 
 #Update with Parametreization / Data Table as Maps
 Scenario: Update an Article
 Given Article must be Created
 When User Update an Article
-| title |
-| TestRP17 |
+| oldtitle | newtitle | desc | body | tag |
+| TestRP22 | TestRP23 | Selenium1 | Java with Selenium | RP |
 Then Article Should be Updated
 
 #Delete with Parametreization / Data Table as Maps
-Scenario: Update an Article
+Scenario: Delete an Article
 Given Article Should be Updated
 When User Delete an Article
 | title |
-| TestRP17 |
+| TestRP23 |
 Then Article Should be Deleted
