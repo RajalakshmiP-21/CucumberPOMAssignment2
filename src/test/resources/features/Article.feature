@@ -14,16 +14,16 @@ Then Article must be Created
 
 Examples:
 | title | desc | body | tag |
-| TestRP21 | Selenium1 | Java with Selenium | RP |
-| TestRP18 | Selenium1 | Java with Selenium | RP |
-| TestRP22 | Selenium1 | Java with Selenium | RP |
+| TestKY21 | Selenium1 | Java with Selenium | RP |
+| TestKY18 | Selenium1 | Java with Selenium | RP |
+| TestKY03 | Selenium1 | Java with Selenium | RP |
 
 #Update with Parametreization / Data Table as Maps
 Scenario: Update an Article
 Given Article must be Created
 When User Update an Article
 | oldtitle | newtitle | desc | body | tag |
-| TestRP22 | TestRP23 | Selenium1 | Java with Selenium | RP |
+| TestKY03 | TestKY23 | Selenium1 | Java with Selenium | RP |
 Then Article Should be Updated
 
 #Delete with Parametreization / Data Table as Maps
@@ -31,5 +31,5 @@ Scenario: Delete an Article
 Given Article Should be Updated
 When User Delete an Article
 | title |
-| TestRP23 |
+| TestKY25 |
 Then Article Should be Deleted

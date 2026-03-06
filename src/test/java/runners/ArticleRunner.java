@@ -11,9 +11,9 @@ import io.cucumber.testng.CucumberOptions;
 		monochrome=true,
 		plugin = {"pretty",
 				"html:test-output/report/HTMLreport.html",
-//				"json:test-output/report/Jsonreport.json",
-//				"rerun:test-output/report/failedscenarios.txt",
-//				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+				"json:test-output/report/Jsonreport.json",
+				"rerun:test-output/report/failedscenarios.txt",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				}
 		)
 
